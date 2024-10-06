@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.0;
 
 import {Hooks} from "v4-core/src/libraries/Hooks.sol";
 import {IHooks} from "v4-core/src/interfaces/IHooks.sol";
@@ -19,24 +19,24 @@ contract Implementation is IHooks {
     using Hooks for IHooks;
 
     constructor() {
-        IHooks(this).validateHookPermissions(
-            Hooks.Permissions({
-                beforeInitialize: true,
-                afterInitialize: true,
-                beforeAddLiquidity: true,
-                afterAddLiquidity: true,
-                beforeRemoveLiquidity: true,
-                afterRemoveLiquidity: true,
-                beforeSwap: true,
-                afterSwap: true,
-                beforeDonate: true,
-                afterDonate: true,
-                beforeSwapReturnDelta: true,
-                afterSwapReturnDelta: true,
-                afterAddLiquidityReturnDelta: true,
-                afterRemoveLiquidityReturnDelta: true
-            })
-        );
+        // IHooks(this).validateHookPermissions(
+        //     Hooks.Permissions({
+        //         beforeInitialize: true,
+        //         afterInitialize: true,
+        //         beforeAddLiquidity: true,
+        //         afterAddLiquidity: true,
+        //         beforeRemoveLiquidity: true,
+        //         afterRemoveLiquidity: true,
+        //         beforeSwap: true,
+        //         afterSwap: true,
+        //         beforeDonate: true,
+        //         afterDonate: true,
+        //         beforeSwapReturnDelta: true,
+        //         afterSwapReturnDelta: true,
+        //         afterAddLiquidityReturnDelta: true,
+        //         afterRemoveLiquidityReturnDelta: true
+        //     })
+        // );
     }
 
     function beforeInitialize(address, PoolKey calldata, uint160, bytes calldata)
